@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql8
+    restart: unless-stopped
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: super_secret
+      MYSQL_DATABASE: ilhamodb
+      MYSQL_USER: ilhamo
+      MYSQL_PASSWORD: qwerty
+    volumes:
+      - db:/var/lib/mysql
+volumes:
+  db:
